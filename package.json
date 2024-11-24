@@ -50,6 +50,5 @@
   "engines": {
     "npm": ">=10.2.4",
     "node": ">=20.11.1"
-  },
-  "packageManager": "pnpm@9.14.2" 
+  }
 }
