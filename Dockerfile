@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:18
 
 WORKDIR /app
 
@@ -6,12 +6,10 @@ COPY . /app/
 
 COPY package*.json /app/
 
-RUN npm install -g pnpm
+RUN npm install
 
-RUN pnpm install
-
-RUN pnpm run build
+RUN npm run build
 
 EXPOSE 8080
 
-CMD ["pnpm", "start"]
+CMD ["npm", "start"]

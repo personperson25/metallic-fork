@@ -8,7 +8,7 @@ import { Request, Response } from "express";
 import pages from "./src/pages.json";
 import themes from "./src/themes.json";
 
-const [app, listen] = new ChemicalServer();
+const chemical = new ChemicalServer();
 
 const __dirname = path.resolve();
 
@@ -18,13 +18,11 @@ if (!fs.existsSync("build")) {
 	console.log("Built!");
 }
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
-app.use(express.static("build"));
+chemical.app.use(express.static("build"));
 
-app.serveChemical();
-
-app.use((req: Request, res: Response) => {
+chemical.error((req: Request, res: Response) => {
 	if (pages.includes(req.url)) {
 		return res.sendFile(__dirname + "/build/index.html");
 	} else {
@@ -32,7 +30,7 @@ app.use((req: Request, res: Response) => {
 	}
 });
 
-listen(port, () => {
+chemical.listen(port, () => {
 	const theme = chalk.hex(
 		themes.filter((theme) => (theme.id = "default"))[0].theme.primary
 	);
