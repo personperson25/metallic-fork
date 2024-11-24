@@ -7,11 +7,11 @@
   "author": "Nebelung",
   "type": "module",
   "scripts": {
-    "start": "npm run test && tsx index.ts",
-    "dev": "npm run test && vite",
-    "build": "npm run test && tsc && vite build",
-    "build-static": "npm run test && vite build && tsx build.ts",
-    "preview": "npm run test && vite preview",
+    "start": "pnpm run test && tsx index.ts",
+    "dev": "pnpm run test && vite",
+    "build": "pnpm run test && tsc && vite build",
+    "build-static": "pnpm run test && vite build && tsx build.ts",
+    "preview": "pnpm run test && vite preview",
     "test": "ava"
   },
   "dependencies": {
@@ -19,7 +19,7 @@
     "@mercuryworkshop/bare-mux": "^2.0.4",
     "@types/express": "^4.17.21",
     "chalk": "^5.3.0",
-    "chemicaljs": "^1.6.5",
+    "chemicaljs": "^1.7.5",
     "clsx": "^2.1.1",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
@@ -48,8 +48,7 @@
     "vite": "^5.4.2"
   },
   "engines": {
-    "npm": ">=10.2.4",
-    "node": ">=20.11.1"
+    "node": ">=20.11.0"
   },
-  "packageManager": "pnpm@10.0.0-alpha.2+sha256.72eda20211e8be99fa558b00a5f1040f0ab834378be2885a58521c11577e3698"
+  "packageManager": "pnpm@10.0.0-alpha.2+sha512.f18a59ca3611002321af7681e6d49234cb3ece8496b05818be5b1081168ec21b8c3d28cbb4351e2fdec66ca95e6516faaf08b95b755013c88cf5174d5029865c"
 }
